@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,53 +11,39 @@
       padding: 0;
       box-sizing: border-box;
       accent-color: #333;
+      user-select: none;
     }
 
     body {
       background: linear-gradient(100deg, #1d91fc 13.57%, #5a36c0 98.38%);
-      font-family: 'Made For Display', system-ui, -apple-system, sans-serif;
+      font-family: system-ui, -apple-system, sans-serif;
       font-weight: 800;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 10px;
       overflow-x: auto;
     }
 
     .piano-container {
       background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-      border-radius: 25px 25px 15px 15px;
-      padding: 40px 30px 20px;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 -5px 10px rgba(0, 0, 0, 0.3), inset 0 5px 10px rgba(255, 255, 255, 0.1);
+      border-radius: 20px 20px 12px 12px;
+      padding: 25px 20px 15px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 -4px 8px rgba(0, 0, 0, 0.3), inset 0 4px 8px rgba(255, 255, 255, 0.1);
       border: 3px solid #333;
       position: relative;
-      overflow: visible;
-      transform: scale(0.5);
-    }
-
-    .piano-container::before {
-      content: '';
-      position: absolute;
-      top: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80%;
-      height: 30px;
-      background: linear-gradient(145deg, #404040, #2a2a2a);
-      border-radius: 15px 15px 0 0;
-      border: 2px solid #333;
-      border-bottom: none;
+      transform: scale(0.75);
+      transform-origin: center center;
     }
 
     .title {
       text-align: center;
       color: white;
-      font-size: 3rem;
+      font-size: 2.2rem;
       font-weight: 800;
-      margin-bottom: 40px;
-      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
       background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
       background-size: 400% 400%;
       -webkit-background-clip: text;
@@ -74,73 +60,46 @@
     .controls {
       display: flex;
       justify-content: center;
-      gap: 40px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 25px;
     }
 
     .controls .control-group {
       background: linear-gradient(145deg, #000, #111);
-      padding: 20px 25px;
-      border-radius: 20px;
+      padding: 12px 18px;
+      border-radius: 14px;
       border: 2px solid #444;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.1);
+      text-align: center;
     }
 
-    .controls .control-group label {
+    .controls label {
       color: white;
       font-weight: 800;
-      margin-bottom: 15px;
+      margin-bottom: 8px;
       display: block;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-      font-size: 1.1rem;
-      letter-spacing: 1px;
+      font-size: 0.95rem;
     }
 
     .controls .slider-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 6px;
     }
 
     .controls .slider {
-      width: 140px;
-      height: 8px;
-      border-radius: 4px;
-      background: linear-gradient(90deg, #222, #444);
+      width: 110px;
+      height: 6px;
+      border-radius: 3px;
+      background: #333;
       outline: none;
       cursor: pointer;
-      transition: all 0.3s ease;
-      border: 1px solid #555;
-    }
-
-    .controls .slider:hover {
-      background: linear-gradient(90deg, #333, #555);
-    }
-
-    .controls .slider::-webkit-slider-thumb {
-      appearance: none;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: linear-gradient(145deg, #4ecdc4, #45b7d1);
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.3);
-      transition: all 0.3s ease;
-      border: 2px solid #fff;
-    }
-
-    .controls .slider::-webkit-slider-thumb:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.4);
     }
 
     .controls .slider-value {
       color: #4ecdc4;
       font-weight: 800;
-      font-size: 1.2rem;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      font-size: 1rem;
     }
 
     .piano-keys {
@@ -148,150 +107,77 @@
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      gap: 1px;
-      background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
-      padding: 25px 20px 15px;
-      border-radius: 15px;
-      box-shadow: inset 0 8px 16px rgba(0, 0, 0, 0.5), inset 0 -4px 8px rgba(255, 255, 255, 0.05);
+      gap: 2px;
+      background: #111;
+      padding: 15px 12px 10px;
+      border-radius: 12px;
       border: 2px solid #333;
     }
 
-    .piano-keys .octave-group {
+    .octave-group {
       display: flex;
       position: relative;
     }
 
-    .piano-keys .white-key {
-      width: 52px;
-      height: 220px;
-      background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 20%, #f0f0f0 80%, #e8e8e8 100%);
-      border: 2px solid #ddd;
-      border-radius: 0 0 12px 12px;
+    /* Белые клавиши */
+    .white-key {
+      width: 36px;
+      height: 150px;
+      background: linear-gradient(to bottom, #ffffff 0%, #eee 100%);
+      border: 1px solid #ccc;
+      border-radius: 0 0 6px 6px;
       cursor: pointer;
-      transition: all 0.12s ease;
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding-bottom: 20px;
-      color: #666;
+      padding-bottom: 10px;
+      color: #333;
+      font-size: 0.85rem;
       font-weight: 800;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), inset 0 4px 8px rgba(255, 255, 255, 0.9), inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
       position: relative;
+      z-index: 1;
     }
 
-    .piano-keys .white-key::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 2px;
-      right: 2px;
-      height: 30px;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
-      border-radius: 8px 8px 0 0;
+    .white-key:hover {
+      background: #f0f0f0;
     }
 
-    .piano-keys .white-key:hover {
-      background: linear-gradient(to bottom, #f5f5f5 0%, #f0f0f0 20%, #e8e8e8 80%, #e0e0e0 100%);
-      transform: translateY(3px);
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3), inset 0 4px 8px rgba(255, 255, 255, 0.8), inset 0 -2px 4px rgba(0, 0, 0, 0.15);
-    }
-
-    .piano-keys .white-key.active {
-      background: linear-gradient(45deg, #ff6b6b, #ff9e9e, #ffd1d1) !important;
+    .white-key.active {
+      background: #ff6b6b !important;
       color: white !important;
-      transform: translateY(6px);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 107, 107, 0.5);
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      transform: translateY(4px);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.4);
     }
 
-    .piano-keys .black-key {
-      width: 32px;
-      height: 140px;
-      background: linear-gradient(to bottom, #2c2c2c 0%, #1a1a1a 20%, #0a0a0a 80%, #000000 100%);
-      border: 2px solid #111;
-      border-radius: 0 0 8px 8px;
+    /* Чёрные клавиши */
+    .black-key {
+      width: 22px;
+      height: 95px;
+      background: linear-gradient(to bottom, #333 0%, #000 100%);
+      border: 1px solid #000;
+      border-radius: 0 0 5px 5px;
       position: absolute;
       cursor: pointer;
-      transition: all 0.12s ease;
       z-index: 10;
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding-bottom: 15px;
-      color: #ccc;
+      padding-bottom: 8px;
+      color: #fff;
       font-weight: 800;
-      font-size: 0.85rem;
-      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6), inset 0 4px 8px rgba(255, 255, 255, 0.1), inset 0 -2px 4px rgba(0, 0, 0, 0.5);
+      font-size: 0.75rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     }
 
-    .piano-keys .black-key::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 2px;
-      right: 2px;
-      height: 20px;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), transparent);
-      border-radius: 6px 6px 0 0;
+    .black-key:hover {
+      background: #222;
     }
 
-    .piano-keys .black-key:hover {
-      background: linear-gradient(to bottom, #444 0%, #333 20%, #222 80%, #111 100%);
-      transform: translateY(3px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), inset 0 4px 8px rgba(255, 255, 255, 0.15), inset 0 -2px 4px rgba(0, 0, 0, 0.6);
-    }
-
-    .piano-keys .black-key.active {
-      background: linear-gradient(45deg, #4ecdc4, #73ded7, #99e9e4) !important;
+    .black-key.active {
+      background: #4ecdc4 !important;
       color: white !important;
-      transform: translateY(6px);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.3), 0 0 20px rgba(78, 205, 196, 0.5);
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    .sound-wave {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80px;
-      height: 80px;
-      border: 3px solid rgba(78, 205, 196, 0.6);
-      border-radius: 50%;
-      animation: soundWave 0.8s ease-out;
-      pointer-events: none;
-      z-index: 1000;
-    }
-
-    @keyframes soundWave {
-      0% {
-        transform: translate(-50%, -50%) scale(0);
-        opacity: 1;
-      }
-      100% {
-        transform: translate(-50%, -50%) scale(1.5);
-        opacity: 0;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .piano-container {
-        transform: scale(0.6);
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .piano-container {
-        transform: scale(0.75);
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .piano-container {
-        transform: scale(1);
-      }
+      transform: translateY(4px);
     }
   </style>
 </head>
@@ -302,7 +188,7 @@
 
     <div class="controls">
       <div class="control-group">
-        <label for="octave">Octave</label>
+        <label for="octave">Октава</label>
         <div class="slider-container">
           <input class="slider" id="octave" type="range" min="-2" max="2" value="0">
           <span class="slider-value" id="octave-value">0</span>
@@ -310,7 +196,7 @@
       </div>
 
       <div class="control-group">
-        <label for="keyshift">Key Shift</label>
+        <label for="keyshift">Тональность</label>
         <div class="slider-container">
           <input class="slider" id="keyshift" type="range" min="-12" max="12" value="0">
           <span class="slider-value" id="keyshift-value">0</span>
@@ -322,240 +208,232 @@
   </div>
 
   <script>
-    const C = new (window.AudioContext || window.webkitAudioContext)();
-    let A = new Map(); // Active sounds
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const activeNotes = new Map();
 
-    const keyLayout = [
-      { note: "C", type: "white", key: "Z" },
-      { note: "C#", type: "black", key: "S", offset: 26.5 },
-      { note: "D", type: "white", key: "X" },
-      { note: "D#", type: "black", key: "D", offset: 79.5 },
-      { note: "E", type: "white", key: "C" },
-      { note: "F", type: "white", key: "V" },
-      { note: "F#", type: "black", key: "G", offset: 185.5 },
-      { note: "G", type: "white", key: "B" },
-      { note: "G#", type: "black", key: "H", offset: 238.5 },
-      { note: "A", type: "white", key: "N" },
-      { note: "A#", type: "black", key: "J", offset: 291.5 },
-      { note: "B", type: "white", key: "M" }
+    // КАЖДАЯ КЛАВИША НА ПИАНИНО ИМЕЕТ СВОЮ УНИКАЛЬНУЮ КНОПКУ!
+    const octaveLayouts = [
+      // Октава 1 (Низкая)
+      [
+        { note: "C", type: "white", key: "Z" },
+        { note: "C#", type: "black", key: "S", offset: 25 },
+        { note: "D", type: "white", key: "X" },
+        { note: "D#", type: "black", key: "D", offset: 61 },
+        { note: "E", type: "white", key: "C" },
+        { note: "F", type: "white", key: "V" },
+        { note: "F#", type: "black", key: "G", offset: 133 },
+        { note: "G", type: "white", key: "B" },
+        { note: "G#", type: "black", key: "H", offset: 169 },
+        { note: "A", type: "white", key: "N" },
+        { note: "A#", type: "black", key: "J", offset: 205 },
+        { note: "B", type: "white", key: "M" }
+      ],
+      // Октава 2 (Средняя)
+      [
+        { note: "C", type: "white", key: "Q" },
+        { note: "C#", type: "black", key: "2", offset: 25 },
+        { note: "D", type: "white", key: "W" },
+        { note: "D#", type: "black", key: "3", offset: 61 },
+        { note: "E", type: "white", key: "E" },
+        { note: "F", type: "white", key: "R" },
+        { note: "F#", type: "black", key: "5", offset: 133 },
+        { note: "G", type: "white", key: "T" },
+        { note: "G#", type: "black", key: "6", offset: 169 },
+        { note: "A", type: "white", key: "Y" },
+        { note: "A#", type: "black", key: "7", offset: 205 },
+        { note: "B", type: "white", key: "U" }
+      ],
+      // Октава 3 (Высокая)
+      [
+        { note: "C", type: "white", key: "I" },
+        { note: "C#", type: "black", key: "9", offset: 25 },
+        { note: "D", type: "white", key: "O" },
+        { note: "D#", type: "black", key: "0", offset: 61 },
+        { note: "E", type: "white", key: "P" },
+        { note: "F", type: "white", key: "A" },
+        { note: "F#", type: "black", key: "=", offset: 133 },
+        { note: "G", type: "white", key: "F" },
+        { note: "G#", type: "black", key: "1", offset: 169 },
+        { note: "A", type: "white", key: "K" },
+        { note: "A#", type: "black", key: "8", offset: 205 },
+        { note: "B", type: "white", key: "L" }
+      ]
     ];
+
+    // Маппинг ENG + RU раскладок для каждой ноты (36 уникальных кнопок)
+    const keyToNoteMap = {
+      // 1 октава
+      'z': 0, 'я': 0,
+      's': 1, 'ы': 1,
+      'x': 2, 'ч': 2,
+      'd': 3, 'в': 3,
+      'c': 4, 'с': 4,
+      'v': 5, 'м': 5,
+      'g': 6, 'п': 6,
+      'b': 7, 'и': 7,
+      'h': 8, 'р': 8,
+      'n': 9, 'т': 9,
+      'j': 10, 'о': 10,
+      'm': 11, 'ь': 11,
+
+      // 2 октава
+      'q': 12, 'й': 12,
+      '2': 13,
+      'w': 14, 'ц': 14,
+      '3': 15,
+      'e': 16, 'у': 16,
+      'r': 17, 'к': 17,
+      '5': 18,
+      't': 19, 'е': 19,
+      '6': 20,
+      'y': 21, 'н': 21,
+      '7': 22,
+      'u': 23, 'г': 23,
+
+      // 3 октава
+      'i': 24, 'ш': 24,
+      '9': 25,
+      'o': 26, 'щ': 26,
+      '0': 27,
+      'p': 28, 'з': 28,
+      'a': 29, 'ф': 29,
+      '=': 30,
+      'f': 31, 'а': 31,
+      '1': 32,
+      'k': 33, 'л': 33,
+      '8': 34,
+      'l': 35, 'д': 35
+    };
 
     function init() {
       createPiano();
       setupEventListeners();
-      updateSliderValues();
     }
 
     function createPiano() {
       const piano = document.getElementById("piano");
 
-      for (let octave = 0; octave < 3; octave++) {
+      octaveLayouts.forEach((octave, octIdx) => {
         const octaveGroup = document.createElement("div");
         octaveGroup.className = "octave-group";
 
-        // White keys
-        keyLayout.forEach((keyData, index) => {
+        // Рендерим белые клавиши
+        octave.forEach((keyData, keyIdx) => {
           if (keyData.type === "white") {
+            const noteIndex = octIdx * 12 + keyIdx;
             const key = document.createElement("div");
             key.className = "white-key";
-            key.id = `key${octave * 12 + index}`;
+            key.id = `key-${noteIndex}`;
             key.innerHTML = keyData.key;
-            key.dataset.noteIndex = octave * 12 + index;
+            key.dataset.note = noteIndex;
 
-            addKeyListeners(key);
+            addMouseListeners(key, noteIndex);
             octaveGroup.appendChild(key);
           }
         });
 
-        // Black keys
-        keyLayout.forEach((keyData, index) => {
+        // Рендерим чёрные клавиши поверх
+        octave.forEach((keyData, keyIdx) => {
           if (keyData.type === "black") {
+            const noteIndex = octIdx * 12 + keyIdx;
             const key = document.createElement("div");
             key.className = "black-key";
-            key.id = `key${octave * 12 + index}`;
+            key.id = `key-${noteIndex}`;
             key.innerHTML = keyData.key;
-            key.dataset.noteIndex = octave * 12 + index;
+            key.dataset.note = noteIndex;
             key.style.left = `${keyData.offset}px`;
 
-            addKeyListeners(key);
+            addMouseListeners(key, noteIndex);
             octaveGroup.appendChild(key);
           }
         });
 
         piano.appendChild(octaveGroup);
-      }
-    }
-
-    function addKeyListeners(key) {
-      key.addEventListener("mousedown", (e) =>
-        playNote(parseInt(e.target.dataset.noteIndex))
-      );
-      key.addEventListener("mouseup", (e) =>
-        stopNote(parseInt(e.target.dataset.noteIndex))
-      );
-      key.addEventListener("mouseleave", (e) =>
-        stopNote(parseInt(e.target.dataset.noteIndex))
-      );
-      key.addEventListener("mouseenter", (e) => {
-        if (e.buttons === 1) playNote(parseInt(e.target.dataset.noteIndex));
       });
     }
 
-    function updateSliderValues() {
-      const octave = document.getElementById("octave").value;
-      const keyshift = document.getElementById("keyshift").value;
-      document.getElementById("octave-value").textContent = octave;
-      document.getElementById("keyshift-value").textContent = keyshift;
+    function addMouseListeners(element, noteIndex) {
+      element.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+        playNote(noteIndex);
+      });
+      element.addEventListener("mouseup", () => stopNote(noteIndex));
+      element.addEventListener("mouseleave", () => stopNote(noteIndex));
     }
 
     function playNote(noteIndex) {
-      if (C.state === "suspended") {
-        C.resume();
+      if (audioCtx.state === "suspended") {
+        audioCtx.resume();
       }
 
-      if (noteIndex < 0 || A.has(noteIndex)) return;
+      if (activeNotes.has(noteIndex)) return;
 
-      const key = document.getElementById(`key${noteIndex}`);
-      if (!key) return;
+      const keyEl = document.getElementById(`key-${noteIndex}`);
+      if (keyEl) keyEl.classList.add("active");
 
-      key.classList.add("active");
-      createSoundWave(key);
+      const octaveShift = parseFloat(document.getElementById("octave").value);
+      const keyShift = parseFloat(document.getElementById("keyshift").value);
+      
+      const freq = 130.81 * Math.pow(2, (noteIndex) / 12 + octaveShift + keyShift / 12);
 
-      const octave = parseFloat(document.getElementById("octave").value);
-      const keyshift = parseFloat(document.getElementById("keyshift").value);
-      const frequency = 55 * Math.pow(2, (noteIndex + 3) / 12 + octave + keyshift / 12);
-
-      const osc = C.createOscillator();
-      const gain = C.createGain();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
 
       osc.type = "sine";
-      osc.frequency.value = frequency;
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
 
-      gain.gain.setValueAtTime(0, C.currentTime);
-      gain.gain.linearRampToValueAtTime(0.2, C.currentTime + 0.2); // Attack
+      gain.gain.setValueAtTime(0, audioCtx.currentTime);
+      gain.gain.linearRampToValueAtTime(0.2, audioCtx.currentTime + 0.05);
 
       osc.connect(gain);
-      gain.connect(C.destination);
+      gain.connect(audioCtx.destination);
 
       osc.start();
-
-      A.set(noteIndex, { osc, gain });
+      activeNotes.set(noteIndex, { osc, gain });
     }
 
     function stopNote(noteIndex) {
-      if (!A.has(noteIndex)) return;
+      if (!activeNotes.has(noteIndex)) return;
 
-      const key = document.getElementById(`key${noteIndex}`);
-      if (key) key.classList.remove("active");
+      const keyEl = document.getElementById(`key-${noteIndex}`);
+      if (keyEl) keyEl.classList.remove("active");
 
-      const { osc, gain } = A.get(noteIndex);
-      const releaseTime = 0.5;
+      const { osc, gain } = activeNotes.get(noteIndex);
+      gain.gain.linearRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
+      
+      setTimeout(() => {
+        osc.stop();
+        osc.disconnect();
+      }, 150);
 
-      gain.gain.linearRampToValueAtTime(0, C.currentTime + releaseTime);
-      osc.stop(C.currentTime + releaseTime); // Sync stop with fade out
-
-      A.delete(noteIndex);
-    }
-
-    function stopAllSounds() {
-      A.forEach((_, index) => stopNote(index));
-    }
-
-    function createSoundWave(element) {
-      const wave = document.createElement("div");
-      wave.className = "sound-wave";
-      element.appendChild(wave);
-      setTimeout(() => wave.remove(), 800);
-    }
-
-    // Key mapping
-    const keyMap = {
-      KeyZ: 0,
-      KeyS: 1,
-      KeyX: 2,
-      KeyD: 3,
-      KeyC: 4,
-      KeyV: 5,
-      KeyG: 6,
-      KeyB: 7,
-      KeyH: 8,
-      KeyN: 9,
-      KeyJ: 10,
-      KeyM: 11,
-      KeyQ: 12,
-      Digit2: 13,
-      KeyW: 14,
-      Digit3: 15,
-      KeyE: 16,
-      KeyR: 17,
-      Digit5: 18,
-      KeyT: 19,
-      Digit6: 20,
-      KeyY: 21,
-      Digit7: 22,
-      KeyU: 23,
-      KeyI: 24,
-      Digit9: 25,
-      KeyO: 26,
-      Digit0: 27,
-      KeyP: 28,
-      BracketLeft: 29,
-      Equal: 30,
-      BracketRight: 31,
-      Backspace: 32,
-      Backslash: 33,
-      Enter: 34,
-      Quote: 35
-    };
-
-    let pressedKeys = new Set();
-
-    function handleKeyDown(e) {
-      if (pressedKeys.has(e.code)) return;
-      pressedKeys.add(e.code);
-
-      const noteIndex = keyMap[e.code];
-      if (noteIndex !== undefined) {
-        e.preventDefault();
-        playNote(noteIndex);
-      }
-    }
-
-    function handleKeyUp(e) {
-      pressedKeys.delete(e.code);
-
-      const noteIndex = keyMap[e.code];
-      if (noteIndex !== undefined) {
-        e.preventDefault();
-        stopNote(noteIndex);
-      }
+      activeNotes.delete(noteIndex);
     }
 
     function setupEventListeners() {
-      document.getElementById("octave").addEventListener("input", updateSliderValues);
-      document.getElementById("keyshift").addEventListener("input", updateSliderValues);
+      document.getElementById("octave").addEventListener("input", (e) => {
+        document.getElementById("octave-value").textContent = e.target.value;
+      });
+      document.getElementById("keyshift").addEventListener("input", (e) => {
+        document.getElementById("keyshift-value").textContent = e.target.value;
+      });
 
-      document.addEventListener("keydown", handleKeyDown);
-      document.addEventListener("keyup", handleKeyUp);
+      window.addEventListener("keydown", (e) => {
+        if (e.repeat) return;
+        const key = e.key.toLowerCase();
+        if (keyToNoteMap[key] !== undefined) {
+          playNote(keyToNoteMap[key]);
+        }
+      });
 
-      window.addEventListener("blur", stopAllSounds);
-
-      document.addEventListener("contextmenu", (e) => {
-        if (e.target.classList.contains("white-key") || e.target.classList.contains("black-key")) {
-          e.preventDefault();
+      window.addEventListener("keyup", (e) => {
+        const key = e.key.toLowerCase();
+        if (keyToNoteMap[key] !== undefined) {
+          stopNote(keyToNoteMap[key]);
         }
       });
     }
 
-    window.addEventListener("load", () => {
-      document.addEventListener("click", () => {
-        if (C.state === "suspended") {
-          C.resume();
-        }
-      }, { once: true });
-
-      init();
-    });
+    window.addEventListener("load", init);
   </script>
 </body>
 </html>
